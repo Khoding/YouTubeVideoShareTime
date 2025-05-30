@@ -14,18 +14,19 @@
     <p>
       Shared URL: <a :href="sharedUrl">{{ sharedUrl }}</a>
     </p>
+    <a href=""></a>
   </main>
 </template>
 
 <script setup>
-import { ref, computed, onMounted } from 'vue'
+import { ref, computed, watchEffect } from 'vue'
 import { useRoute } from 'vue-router'
 
 const videoUrl = ref('')
 const timeValue = ref('00:00:00')
+const route = useRoute()
 
-onMounted(() => {
-  const route = useRoute()
+watchEffect(() => {
   const queryUrl = route.query.url
   const queryText = route.query.text
 
@@ -37,12 +38,13 @@ onMounted(() => {
     typeof queryText === 'string' &&
     (queryText.startsWith('http://') || queryText.startsWith('https://'))
   ) {
-    console.log(queryText)
     detectedUrl = queryText
   }
 
   if (detectedUrl) {
-    videoUrl.value = detectedUrl
+    if (videoUrl.value !== detectedUrl) {
+      videoUrl.value = detectedUrl
+    }
   }
 })
 
@@ -66,7 +68,6 @@ const sharedUrl = computed(() => {
     url.searchParams.set('t', totalSeconds.value)
     return url.toString()
   } catch (error) {
-    console.error('Invalid URL:', error)
     return 'Invalid YouTube URL'
   }
 })
