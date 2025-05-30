@@ -1,29 +1,4 @@
 # YouTubeVideoShareTime
 
-This template should help get you started developing with Vue 3 in Vite.
-
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+Just a simple app because YouTube doesn't have the "Start at" feature on mobile (not Android anyway).
+Basically what it does is it allows you to share a video with the app (when installed as a PWA on your phone), and then you're greeted with a wonderful (very basic) UI with a time input field, you can then input whatever time you want to share the video to start at, click on the link at the bottom, and boom.
