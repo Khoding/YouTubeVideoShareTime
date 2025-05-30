@@ -1,4 +1,7 @@
 <template>
+  <header class="center-align">
+    <h1 class="small">YouTube Share Time Adder</h1>
+  </header>
   <main class="responsive center-align top-margin bottom-margin">
     <div class="field label border">
       <input type="text" id="videoUrlInput" v-model="videoUrl" />
@@ -12,7 +15,7 @@
       <label for="timeInput">Time:</label>
     </div>
     <p>
-      Shared URL: <a :href="sharedUrl">{{ sharedUrl }}</a>
+      Timed URL: <a :href="sharedUrl">{{ sharedUrl }}</a>
     </p>
     <a href=""></a>
   </main>

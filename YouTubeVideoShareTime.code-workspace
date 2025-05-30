@@ -3,11 +3,6 @@
     {
       "path": ".",
     },
-    {
-      "path": "../pump-up-the-jam-calculator",
-    },
-    { "path": "../bwlp-vue-frontend" },
-    { "path": "../bookmarks" },
   ],
   "settings": {},
 }
