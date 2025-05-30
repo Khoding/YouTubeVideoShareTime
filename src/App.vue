@@ -11,7 +11,9 @@
 
       <label for="timeInput">Time:</label>
     </div>
-    <p>Shared URL: {{ sharedUrl }}</p>
+    <p>
+      Shared URL: <a :href="sharedUrl">{{ sharedUrl }}</a>
+    </p>
   </main>
 </template>
 
@@ -40,8 +42,6 @@ onMounted(() => {
 
   if (detectedUrl) {
     videoUrl.value = detectedUrl
-  } else {
-    videoUrl.value = 'https://youtu.be/dQw4w9WgXcQ?si=PzaFnbcKc8GcWiqH'
   }
 })
 
