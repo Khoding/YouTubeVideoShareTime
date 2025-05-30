@@ -24,8 +24,24 @@ const timeValue = ref('00:00:00')
 
 onMounted(() => {
   const route = useRoute()
-  if (route.query && route.query.url) {
-    videoUrl.value = route.query.url
+  const queryUrl = route.query.url
+  const queryText = route.query.text
+
+  let detectedUrl = queryUrl
+
+  if (
+    !detectedUrl &&
+    queryText &&
+    typeof queryText === 'string' &&
+    (queryText.startsWith('http://') || queryText.startsWith('https://'))
+  ) {
+    detectedUrl = queryText
+  }
+
+  if (detectedUrl) {
+    videoUrl.value = detectedUrl
+  } else {
+    videoUrl.value = 'https://youtu.be/dQw4w9WgXcQ?si=PzaFnbcKc8GcWiqH'
   }
 })
 
