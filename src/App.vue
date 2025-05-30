@@ -37,6 +37,7 @@ onMounted(() => {
     typeof queryText === 'string' &&
     (queryText.startsWith('http://') || queryText.startsWith('https://'))
   ) {
+    console.log(queryText)
     detectedUrl = queryText
   }
 
