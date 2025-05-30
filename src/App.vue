@@ -17,7 +17,6 @@
     <p>
       Timed URL: <a :href="sharedUrl">{{ sharedUrl }}</a>
     </p>
-    <a href=""></a>
   </main>
 </template>
 
