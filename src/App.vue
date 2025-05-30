@@ -15,7 +15,7 @@
       <label for="timeInput">Time:</label>
     </div>
     <p>
-      Timed URL: <a :href="sharedUrl">{{ sharedUrl }}</a>
+      Timed URL: <a :href="sharedUrl" target="_blank" rel="noopener noreferrer">{{ sharedUrl }}</a>
     </p>
   </main>
 </template>
@@ -63,7 +63,7 @@ const totalSeconds = computed(() => {
 
 const sharedUrl = computed(() => {
   if (!videoUrl.value) {
-    return ''
+    return 'https://youtu.be/dQw4w9WgXcQ?si=mcK2lYuJrd5MCBVn'
   }
   try {
     const url = new URL(videoUrl.value)
