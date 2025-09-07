@@ -1,6 +1,6 @@
 {
   "name": "youtubevideosharetime",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -11,17 +11,17 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
-    "beercss": "^3.11.20",
-    "material-symbols": "^0.31.8",
-    "vue": "^3.5.17",
+    "beercss": "^3.11.33",
+    "material-symbols": "^0.35.0",
+    "vue": "^3.5.21",
     "vue-router": "^4.5.1"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^5.2.4",
+    "@vitejs/plugin-vue": "^6.0.1",
     "gh-pages": "^6.3.0",
-    "prettier": "3.5.3",
-    "vite": "^6.3.5",
-    "vite-plugin-pwa": "^1.0.0",
-    "vite-plugin-vue-devtools": "^7.7.7"
+    "prettier": "3.6.2",
+    "vite": "^7.1.4",
+    "vite-plugin-pwa": "^1.0.2",
+    "vite-plugin-vue-devtools": "^8.0.1"
   }
 }

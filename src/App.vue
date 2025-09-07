@@ -15,7 +15,9 @@
       <label for="timeInput">Time:</label>
     </div>
     <p>
-      Timed URL: <a :href="sharedUrl" target="_blank" rel="noopener noreferrer">{{ sharedUrl }}</a>
+      <button @click="setClipboard(sharedUrl)" target="_blank" rel="noopener noreferrer">
+        Timed URL: <span class="bold">{{ sharedUrl }}</span> (click to copy)
+      </button>
     </p>
   </main>
 </template>
@@ -63,14 +65,24 @@ const totalSeconds = computed(() => {
 
 const sharedUrl = computed(() => {
   if (!videoUrl.value) {
-    return 'https://youtu.be/dQw4w9WgXcQ?si=mcK2lYuJrd5MCBVn'
+    return 'https://youtu.be/dQw4w9WgXcQ'
   }
   try {
     const url = new URL(videoUrl.value)
     url.searchParams.set('t', totalSeconds.value)
+    url.searchParams.delete('si')
     return url.toString()
   } catch (error) {
     return 'Invalid YouTube URL'
   }
 })
+
+async function setClipboard(text) {
+  const type = 'text/plain'
+  const clipboardItemData = {
+    [type]: text,
+  }
+  const clipboardItem = new ClipboardItem(clipboardItemData)
+  await navigator.clipboard.write([clipboardItem])
+}
 </script>
